@@ -18,6 +18,9 @@ from .pagination import ExpenseListPagination
 # Create your views here.
 
 
+def home():
+    return Response({"message":"welcome"})
+
 class CategoryList(generics.ListCreateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer

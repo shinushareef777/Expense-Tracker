@@ -1,6 +1,7 @@
-et-env
+env
 .vscode
 backend/api/__pycache__
 backend/db.sqlite3
-backend/api/__pycache__
+backend/api/__pycache__/
+backend/expense_tracker/__pycache__/
 backend/api/migrations/__pycache__
