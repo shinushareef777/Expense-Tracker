@@ -55,7 +55,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "http://3.27.142.190/"
+    "http://3.27.142.190"
 ]
 
 # To allow all headers and methods, you can use the following settings (for development purposes):
