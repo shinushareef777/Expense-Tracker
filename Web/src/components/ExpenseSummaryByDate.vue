@@ -42,7 +42,7 @@ const headers = [
 async function getExpenseSummary() {
   try {
     response = await axios
-      .get("http://127.0.0.1:4000/api/summary/day")
+      .get("/api/summary/day")
       .then((res) => (expenseSummary.value = res.data.results))
       .catch((err) => console.log("promoise error"));
   } catch (error) {}

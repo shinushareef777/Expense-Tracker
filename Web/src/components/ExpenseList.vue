@@ -90,7 +90,7 @@ const gotoPageNum = (num) => {
 async function getExpenseList(pageNum) {
   try {
     let response = await axios.get(
-      `http://0.0.0.0:8000/api/expenses?page=${pageNum}`
+      `/api/expenses?page=${pageNum}`
     );
 
     expenseList.value = response.data.results;
@@ -103,14 +103,14 @@ async function getExpenseList(pageNum) {
 
 async function getExpense(id) {
   try {
-    let response = await axios.get(`http://0.0.0.0:8000/api/expenses/${id}`);
+    let response = await axios.get(`/api/expenses/${id}`);
     eventBus.emit("edit-expense", response.data);
   } catch (err) {}
 }
 
 async function deleteExpense(id) {
   try {
-    await axios.delete(`http://0.0.0.0:8000/api/expenses/${id}`);
+    await axios.delete(`/api/expenses/${id}`);
     getExpenseList(currentPageNum.value);
   } catch (error) {
     console.log(error);

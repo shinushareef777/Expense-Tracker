@@ -95,7 +95,7 @@ const dateOfExpense = ref(null);
 
 async function getCategories() {
   try {
-    const response = await axios.get("http://0.0.0.0:8000/api/categories");
+    const response = await axios.get("/api/categories");
     categories.value = response.data.results;
   } catch (error) {
     console.log(error);
@@ -104,7 +104,7 @@ async function getCategories() {
 
 async function getPaymentMethod() {
   try {
-    const response = await axios.get("http://0.0.0.0:8000/api/payments");
+    const response = await axios.get("/api/payments");
     payments.value = response.data.results;
   } catch (error) {
     console.log(error);
@@ -119,7 +119,7 @@ const clearForm = () => {
 };
 
 async function save() {
-  let url = `http://0.0.0.0:8000/api/expenses`;
+  let url = `/api/expenses`;
   let data = {
     item: item.value,
     price: amount.value,
