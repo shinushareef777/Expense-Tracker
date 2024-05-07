@@ -14,12 +14,19 @@ from .models import Category, Expense, Payment
 from django.db.models import F, Sum, Max, Subquery, OuterRef, Window
 from django.db.models.functions import RowNumber, TruncDate, TruncMonth
 from .pagination import ExpenseListPagination
+from rest_framework.decorators import api_view
 
 # Create your views here.
 
 
-def home():
-    return Response({"message":"welcome"})
+
+
+@api_view(['GET'])
+def home(request):
+    if request.method == "GET":
+        return Response({"message": "welcome"})
+    else:
+        return Response({"message": "Method not allowed"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 class CategoryList(generics.ListCreateAPIView):
     queryset = Category.objects.all()
